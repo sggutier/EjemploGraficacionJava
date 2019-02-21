@@ -1,6 +1,7 @@
 package GeoBasica;
 
 import java.awt.*;
+import java.util.Collection;
 
 public class PoligonoGrafico extends Poligono implements Dibujable {
     private Color color;
@@ -13,6 +14,11 @@ public class PoligonoGrafico extends Poligono implements Dibujable {
     public PoligonoGrafico(Poligono p, Color c) {
         super(p);
         color = c;
+    }
+
+    public PoligonoGrafico(Collection<Punto> w, Color color) {
+        super(w);
+        this.color = color;
     }
 
     @Override

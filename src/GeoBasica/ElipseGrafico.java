@@ -27,7 +27,7 @@ public class ElipseGrafico extends Elipse implements Dibujable {
 
     @Override
     public Dibujable trasladar(double dx, double dy) {
-        return null;
+        return new ElipseGrafico(x + dx, y + dy, w, h, fill, bord);
     }
 
     @Override
