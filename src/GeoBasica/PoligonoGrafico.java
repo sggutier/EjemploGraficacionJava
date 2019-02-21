@@ -21,6 +21,10 @@ public class PoligonoGrafico extends Poligono implements Dibujable {
         this.color = color;
     }
 
+    public PoligonoGrafico(Color color) {
+        this.color = color;
+    }
+
     @Override
     public void dibujar(Graphics dw) {
         int n = super.size();
