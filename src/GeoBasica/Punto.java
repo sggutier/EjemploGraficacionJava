@@ -1,3 +1,5 @@
+package GeoBasica;
+
 public class Punto {
     public double x, y;
 

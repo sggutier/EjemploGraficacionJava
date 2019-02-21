@@ -1,3 +1,5 @@
+package GeoBasica;
+
 import java.awt.*;
 
 public class CuadradoGrafico extends RectanguloGrafico {

@@ -8,6 +8,8 @@
  *
  * @author S-Nancy
  */
+import GeoBasica.*;
+
 import java.util.Vector;
 import java.awt.*;
 
@@ -22,7 +24,7 @@ public class Ejemplo {
         v.add(new LineaGrafica(200, 2, 300, 200, Color.orange));
         Dibujable t = new TrianguloGrafico(33, 490 - 200, 163, 490 - 200, 3, 370 - 200, Color.cyan);
 
-//        v.add(new TrianguloGrafico(0, 0, 100, 0, 0, 300, Color.CYAN));
+//        v.add(new GeoBasica.TrianguloGrafico(0, 0, 100, 0, 0, 300, Color.CYAN));
 
         v.add(t);
 

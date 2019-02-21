@@ -1,5 +1,8 @@
+package GeoBasica;
+
+import GeoBasica.PoligonoGrafico;
+
 import java.awt.*;
-import java.util.Arrays;
 
 public class TrianguloGrafico extends PoligonoGrafico {
 

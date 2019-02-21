@@ -1,6 +1,6 @@
+package GeoBasica;
+
 import java.awt.*;
-import java.util.Arrays;
-import java.util.stream.Stream;
 
 public class PoligonoGrafico extends Poligono implements Dibujable {
     private Color color;
@@ -24,8 +24,8 @@ public class PoligonoGrafico extends Poligono implements Dibujable {
             ys[i] = (int) Math.round(super.get(i).y);
         }
         Polygon pol = new Polygon(xs, ys, xs.length);
-        dw.setColor(Color.BLACK);
-        dw.drawPolygon(pol);
+//        dw.setColor(Color.BLACK);
+//        dw.drawPolygon(pol);
         dw.setColor(color);
         dw.fillPolygon(pol);
     }

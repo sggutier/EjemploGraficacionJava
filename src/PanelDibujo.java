@@ -8,6 +8,8 @@
  *
  * @author S-Nancy
  */
+import GeoBasica.Dibujable;
+
 import java.awt.*;
 import java.util.Vector;
 import java.util.Enumeration;
