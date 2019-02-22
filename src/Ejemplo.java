@@ -34,7 +34,7 @@ public class Ejemplo {
 //
 //
 //        v.add(new RectanguloGrafico(70, 70, Color.yellow).sizallar(-0.5, 0).trasladar(130, 0));
-        v.add(new Casa());
+        v.add(new LogoSistemas().escalar(0.2, 0.2).trasladar(80, 80));
 //        v.add(new Estrella().trasladar(100, 100));
 
         PanelDibujo mipanel = new PanelDibujo(v);
