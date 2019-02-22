@@ -5,10 +5,7 @@
  */
 
 import GeoBasica.Dibujable;
-import GeoFiguras.ArbolNavidad;
-import GeoFiguras.Casa;
-import GeoFiguras.Estrella;
-import GeoFiguras.Smile;
+import GeoFiguras.*;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -28,8 +25,8 @@ public class Dibujitos extends javax.swing.JFrame {
     
     String figura="";
 
-    boolean estad[] = {false, false, false, false, };
-    Dibujable figs[] = {new Smile(), new ArbolNavidad(), new Estrella().trasladar(70, 350), new Casa().trasladar(10, 70)};
+    boolean estad[] = {false, false, false, false, false};
+    Dibujable figs[] = {new Smile(), new ArbolNavidad(), new Estrella().trasladar(70, 350), new Casa().trasladar(10, 70), new Automobil().escalar(1.5,1.5).trasladar(220,300)};
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -168,7 +165,8 @@ public class Dibujitos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSmileActionPerformed
 
     private void btnAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutoActionPerformed
-        // TODO add your handling code here:
+        estad[4] = !estad[4];
+        paint(this.getGraphics());
     }//GEN-LAST:event_btnAutoActionPerformed
 
     private void btnCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutoActionPerformed

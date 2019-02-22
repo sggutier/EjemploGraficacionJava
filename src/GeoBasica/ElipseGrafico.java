@@ -37,7 +37,7 @@ public class ElipseGrafico extends Elipse implements Dibujable {
 
     @Override
     public Dibujable escalar(double fx, double fy) {
-        return null;
+        return new ElipseGrafico(x*fx, y*fy, w*fx, h*fy, fill, bord);
     }
 
     @Override
