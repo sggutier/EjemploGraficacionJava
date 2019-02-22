@@ -6,6 +6,11 @@ import java.util.Collection;
 public class PoligonoGrafico extends Poligono implements Dibujable {
     private Color color;
 
+    public PoligonoGrafico(Punto[] puntos, Color color) {
+        super(puntos);
+        this.color = color;
+    }
+
     public PoligonoGrafico(double[] xs, double[] ys, Color color) {
         super(xs, ys);
         this.color = color;

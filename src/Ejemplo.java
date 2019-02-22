@@ -9,9 +9,7 @@
  * @author S-Nancy
  */
 import GeoBasica.*;
-import GeoFiguras.Arbol;
-import GeoFiguras.Estrella;
-import GeoFiguras.Smile;
+import GeoFiguras.*;
 
 import java.util.Vector;
 import java.awt.*;
@@ -36,7 +34,7 @@ public class Ejemplo {
 //
 //
 //        v.add(new RectanguloGrafico(70, 70, Color.yellow).sizallar(-0.5, 0).trasladar(130, 0));
-        v.add(new Smile());
+        v.add(new Casa());
 //        v.add(new Estrella().trasladar(100, 100));
 
         PanelDibujo mipanel = new PanelDibujo(v);

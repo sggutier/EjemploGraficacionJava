@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 
-import GeoBasica.CuadradoGrafico;
 import GeoBasica.Dibujable;
-import GeoFiguras.Arbol;
+import GeoFiguras.ArbolNavidad;
 import GeoFiguras.Estrella;
 import GeoFiguras.Smile;
 
@@ -29,7 +28,7 @@ public class Dibujitos extends javax.swing.JFrame {
     String figura="";
 
     boolean estad[] = {false, false, false};
-    Dibujable figs[] = {new Smile(), new Arbol(), new Estrella().trasladar(70, 350)};
+    Dibujable figs[] = {new Smile(), new ArbolNavidad(), new Estrella().trasladar(70, 350)};
 
     /**
      * This method is called from within the constructor to initialize the form.
