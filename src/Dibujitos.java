@@ -6,6 +6,7 @@
 
 import GeoBasica.Dibujable;
 import GeoFiguras.ArbolNavidad;
+import GeoFiguras.Casa;
 import GeoFiguras.Estrella;
 import GeoFiguras.Smile;
 
@@ -27,8 +28,8 @@ public class Dibujitos extends javax.swing.JFrame {
     
     String figura="";
 
-    boolean estad[] = {false, false, false};
-    Dibujable figs[] = {new Smile(), new ArbolNavidad(), new Estrella().trasladar(70, 350)};
+    boolean estad[] = {false, false, false, false, };
+    Dibujable figs[] = {new Smile(), new ArbolNavidad(), new Estrella().trasladar(70, 350), new Casa().trasladar(10, 70)};
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -61,6 +62,11 @@ public class Dibujitos extends javax.swing.JFrame {
         });
 
         btnCasa.setText("Casa");
+        btnCasa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCasaActionPerformed(evt);
+            }
+        });
 
         btnAuto.setText("Auto");
         btnAuto.addActionListener(new java.awt.event.ActionListener() {
@@ -163,6 +169,11 @@ public class Dibujitos extends javax.swing.JFrame {
 
     private void btnAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutoActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_btnAutoActionPerformed
+
+    private void btnCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutoActionPerformed
+        estad[3] = !estad[3];
+        paint(this.getGraphics());
     }//GEN-LAST:event_btnAutoActionPerformed
 
     private void btnEstrellaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutoActionPerformed
