@@ -5,6 +5,7 @@
  */
 
 import GeoBasica.Dibujable;
+import GeoBasica.TextoGrafico;
 import GeoFiguras.*;
 
 import java.awt.Color;
@@ -252,12 +253,16 @@ public class Dibujitos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogoSistemas
 
     private void btnTexto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTexto
-        // TODO add your handling code here:
+        textoSelec = true;
     }//GEN-LAST:event_btnTexto
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
         if(logoSelec) {
             contenido.add(new LogoSistemas().escalar(0.1, 0.1).trasladar(evt.getX(), evt.getY()));
+            paint(this.getGraphics());
+        }
+        else if(textoSelec) {
+            contenido.add(new TextoGrafico("yoloswag").trasladar(evt.getX(), evt.getY()));
             paint(this.getGraphics());
         }
     }//GEN-LAST:event_formMouseClicked
@@ -266,10 +271,11 @@ public class Dibujitos extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     private boolean logoSelec = false;
+    private boolean textoSelec = false;
     
     public void paint(Graphics g){
         super.paint(g);
-        logoSelec = false;
+        textoSelec = logoSelec = false;
         for(Dibujable d : contenido)
             d.dibujar(g);
     }

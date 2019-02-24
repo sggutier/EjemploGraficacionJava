@@ -36,6 +36,7 @@ public class Ejemplo {
 //        v.add(new RectanguloGrafico(70, 70, Color.yellow).sizallar(-0.5, 0).trasladar(130, 0));
 //        v.add(new LogoSistemas().escalar(0.2, 0.2).trasladar(80, 80));
 //        v.add(new Estrella().trasladar(100, 100));
+        v.add(new TextoGrafico("yoloswag",100,100,20));
 
         PanelDibujo mipanel = new PanelDibujo(v);
         ventana.add(mipanel);
