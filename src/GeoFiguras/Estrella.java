@@ -4,7 +4,6 @@ import GeoBasica.PoligonoGrafico;
 import GeoBasica.Punto;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 public class Estrella extends PoligonoGrafico {
     public Estrella(int outr, int inr, int lads, Color c) {

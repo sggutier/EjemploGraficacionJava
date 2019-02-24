@@ -9,6 +9,7 @@ import GeoFiguras.*;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 
 /**
  *
@@ -25,8 +26,9 @@ public class Dibujitos extends javax.swing.JFrame {
     
     String figura="";
 
-    boolean estad[] = {false, false, false, false, false};
-    Dibujable figs[] = {new Smile(), new ArbolNavidad(), new Estrella().trasladar(70, 350), new Casa().trasladar(10, 70), new Automobil().escalar(1.5,1.5).trasladar(220,300)};
+//    boolean estad[] = {false, false, false, false, false};
+//    Dibujable figs[] = {new Smile(), new ArbolNavidad(), new Estrella().trasladar(70, 350), new Casa().trasladar(10, 70), new Automobil().escalar(1.5,1.5).trasladar(220,300)};
+    ArrayList<Dibujable> contenido = new ArrayList<>();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -63,6 +65,11 @@ public class Dibujitos extends javax.swing.JFrame {
         });
 
         btnCasa.setText("Casa");
+        btnCasa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCasaActionPerformed(evt);
+            }
+        });
 
         btnAuto.setText("Auto");
         btnAuto.addActionListener(new java.awt.event.ActionListener() {
@@ -125,10 +132,25 @@ public class Dibujitos extends javax.swing.JFrame {
         });
 
         jButton2.setText("Borrar todo");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarTodo(evt);
+            }
+        });
 
         jButton3.setText("Logo sistemas");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoSistemas(evt);
+            }
+        });
 
         jButton4.setText("Texto");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTexto(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -184,34 +206,48 @@ public class Dibujitos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSmileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSmileActionPerformed
-        estad[0] = !estad[0];
+        contenido.add(new Smile());
         paint(this.getGraphics());
         
     }//GEN-LAST:event_btnSmileActionPerformed
 
-    private void btnAutoActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        estad[4] = !estad[4];
+    private void btnEstrellaActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        contenido.add(new Estrella().trasladar(70, 350));
         paint(this.getGraphics());
     }                                       
-
-    private void btnCasaActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        estad[3] = !estad[3];
-        paint(this.getGraphics());
-    }                                       
-
-    private void btnEstrellaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutoActionPerformed
-        estad[2] = !estad[2];
-        paint(this.getGraphics());
-    }//GEN-LAST:event_btnAutoActionPerformed
 
     private void btnArbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArbolActionPerformed
-        estad[1] = !estad[1];
+        contenido.add(new ArbolNavidad());
         paint(this.getGraphics());
     }//GEN-LAST:event_btnArbolActionPerformed
 
     private void borrar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrar
-        // TODO add your handling code here:
+        if(!contenido.isEmpty())
+            contenido.remove(contenido.size()-1);
+        paint(this.getGraphics());
     }//GEN-LAST:event_borrar
+
+    private void btnCasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCasaActionPerformed
+        contenido.add(new Casa().trasladar(10, 70));
+        paint(this.getGraphics());
+    }//GEN-LAST:event_btnCasaActionPerformed
+
+    private void btnAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutoActionPerformed
+        contenido.add(new Automobil().escalar(1.5,1.5).trasladar(220,300));
+        paint(this.getGraphics());
+    }//GEN-LAST:event_btnAutoActionPerformed
+
+    private void btnBorrarTodo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarTodo
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBorrarTodo
+
+    private void btnLogoSistemas(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoSistemas
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLogoSistemas
+
+    private void btnTexto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTexto
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTexto
 
     /**
      * @param args the command line arguments
@@ -219,9 +255,8 @@ public class Dibujitos extends javax.swing.JFrame {
     
     public void paint(Graphics g){
         super.paint(g);
-        for(int i=0; i<estad.length; i++)
-            if(estad[i])
-                figs[i].dibujar(g);
+        for(Dibujable d : contenido)
+            d.dibujar(g);
     }
 
     public static void main(String args[]) {
