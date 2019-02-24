@@ -8,6 +8,7 @@ import GeoBasica.Dibujable;
 import GeoBasica.TextoGrafico;
 import GeoFiguras.*;
 
+import javax.swing.*;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
@@ -262,7 +263,8 @@ public class Dibujitos extends javax.swing.JFrame {
             paint(this.getGraphics());
         }
         else if(textoSelec) {
-            contenido.add(new TextoGrafico("yoloswag").trasladar(evt.getX(), evt.getY()));
+            String txt = JOptionPane.showInputDialog("Escribir texto:");
+            contenido.add(new TextoGrafico(txt).trasladar(evt.getX(), evt.getY()));
             paint(this.getGraphics());
         }
     }//GEN-LAST:event_formMouseClicked
