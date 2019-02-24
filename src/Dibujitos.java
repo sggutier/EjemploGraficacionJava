@@ -53,6 +53,11 @@ public class Dibujitos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -238,23 +243,33 @@ public class Dibujitos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAutoActionPerformed
 
     private void btnBorrarTodo(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarTodo
-        // TODO add your handling code here:
+        contenido = new ArrayList<>();
+        paint(this.getGraphics());
     }//GEN-LAST:event_btnBorrarTodo
 
     private void btnLogoSistemas(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoSistemas
-        // TODO add your handling code here:
+        logoSelec = true;
     }//GEN-LAST:event_btnLogoSistemas
 
     private void btnTexto(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTexto
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTexto
 
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        if(logoSelec) {
+            contenido.add(new LogoSistemas().escalar(0.1, 0.1).trasladar(evt.getX(), evt.getY()));
+            paint(this.getGraphics());
+        }
+    }//GEN-LAST:event_formMouseClicked
+
     /**
      * @param args the command line arguments
      */
+    private boolean logoSelec = false;
     
     public void paint(Graphics g){
         super.paint(g);
+        logoSelec = false;
         for(Dibujable d : contenido)
             d.dibujar(g);
     }
