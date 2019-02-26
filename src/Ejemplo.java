@@ -9,10 +9,10 @@
  * @author S-Nancy
  */
 import GeoBasica.*;
-import GeoFiguras.*;
+import Logo.Cubo;
+import Logo.Dino;
 
 import java.util.Vector;
-import java.awt.*;
 
 public class Ejemplo {
 
@@ -35,12 +35,13 @@ public class Ejemplo {
 //
 //        v.add(new RectanguloGrafico(70, 70, Color.yellow).sizallar(-0.5, 0).trasladar(130, 0));
 //        v.add(new LogoSistemas().escalar(0.2, 0.2).trasladar(80, 80));
-//        v.add(new Estrella().trasladar(100, 100));
-        v.add(new TextoGrafico("yoloswag",100,100,20));
+        Dibujable d = new Dino().escalar(7, 7);
+        v.add(d.trasladar(-d.minX(), -d.minY()));
+//        v.add(new TextoGrafico("yoloswag",100,100,20));
 
         PanelDibujo mipanel = new PanelDibujo(v);
         ventana.add(mipanel);
-        ventana.setSize(500, 400);
+        ventana.setSize(800, 600);
         ventana.setVisible(true);
     }
 }
