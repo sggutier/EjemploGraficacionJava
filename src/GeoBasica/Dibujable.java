@@ -11,7 +11,11 @@ public interface Dibujable {
     Dibujable rotar(double deg);
     Dibujable escalar(double fx, double fy);
     Dibujable sizallar(double a, double b);
-  //  public void setPosicion(double x, double y);    
+
+    public double minX();
+    public double maxX();
+    public double minY();
+    public double maxY();
    
    
 }

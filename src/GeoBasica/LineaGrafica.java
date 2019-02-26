@@ -47,4 +47,23 @@ public class LineaGrafica extends Linea implements Dibujable {
         return null;
     }
 
+    @Override
+    public double minX() {
+        return Math.min(x1, x2);
+    }
+
+    @Override
+    public double maxX() {
+        return Math.max(x1, x2);
+    }
+
+    @Override
+    public double minY() {
+        return Math.min(y1, y2);
+    }
+
+    @Override
+    public double maxY() {
+        return Math.max(y1, y2);
+    }
 }

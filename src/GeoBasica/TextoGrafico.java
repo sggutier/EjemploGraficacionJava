@@ -62,4 +62,24 @@ public class TextoGrafico implements Dibujable {
     public Dibujable sizallar(double a, double b) {
         return null;
     }
+
+    @Override
+    public double minX() {
+        return x;
+    }
+
+    @Override
+    public double maxX() {
+        return x;
+    }
+
+    @Override
+    public double minY() {
+        return y;
+    }
+
+    @Override
+    public double maxY() {
+        return y;
+    }
 }

@@ -52,4 +52,36 @@ public class MultiDibujable extends ArrayList<Dibujable> implements Dibujable {
             ans.add(d.sizallar(a, b));
         return ans;
     }
+
+    @Override
+    public double minX() {
+        double ans = 1e9;
+        for(Dibujable d : this)
+            ans = Math.min(ans, d.minX());
+        return ans;
+    }
+
+    @Override
+    public double maxX() {
+        double ans = -1e9;
+        for(Dibujable d : this)
+            ans = Math.max(ans, d.maxX());
+        return ans;
+    }
+
+    @Override
+    public double minY() {
+        double ans = 1e9;
+        for(Dibujable d : this)
+            ans = Math.min(ans, d.minY());
+        return ans;
+    }
+
+    @Override
+    public double maxY() {
+        double ans = -1e9;
+        for(Dibujable d : this)
+            ans = Math.min(ans, d.maxY());
+        return ans;
+    }
 }

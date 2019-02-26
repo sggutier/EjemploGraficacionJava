@@ -64,4 +64,36 @@ public class PoligonoGrafico extends Poligono implements Dibujable {
     public Dibujable sizallar(double a, double b) {
         return new PoligonoGrafico(super.sizallarP(a, b), color);
     }
+
+    @Override
+    public double minX() {
+        double ans = this.get(0).x;
+        for(Punto p : this)
+            ans = Math.min(ans, p.x);
+        return ans;
+    }
+
+    @Override
+    public double maxX() {
+        double ans = this.get(0).x;
+        for(Punto p : this)
+            ans = Math.max(ans, p.x);
+        return ans;
+    }
+
+    @Override
+    public double minY() {
+        double ans = this.get(0).y;
+        for(Punto p : this)
+            ans = Math.min(ans, p.y);
+        return ans;
+    }
+
+    @Override
+    public double maxY() {
+        double ans = this.get(0).y;
+        for(Punto p : this)
+            ans = Math.max(ans, p.y);
+        return ans;
+    }
 }

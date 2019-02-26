@@ -44,4 +44,24 @@ public class ElipseGrafico extends Elipse implements Dibujable {
     public Dibujable sizallar(double a, double b) {
         return null;
     }
+
+    @Override
+    public double minX() {
+        return x;
+    }
+
+    @Override
+    public double maxX() {
+        return x + h;
+    }
+
+    @Override
+    public double minY() {
+        return y;
+    }
+
+    @Override
+    public double maxY() {
+        return y + w ;
+    }
 }
