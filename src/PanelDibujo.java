@@ -11,25 +11,22 @@
 import GeoBasica.Dibujable;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Vector;
 import java.util.Enumeration;
 
 public class PanelDibujo extends Panel {
 
-    private Vector v;
+    private ArrayList<Dibujable> v;
 
-    public PanelDibujo(Vector vect) {
+    public PanelDibujo(ArrayList<Dibujable> vect) {
         super(new FlowLayout());
         this.v = vect;
     }
 
     public void paint(Graphics g) {
-        Dibujable dib;
-        Enumeration e;
-        e = v.elements();
-        while (e.hasMoreElements()) {
-            dib = (Dibujable) e.nextElement();
-            dib.dibujar(g);
+        for(Dibujable dbj : v) {
+            dbj.dibujar(g);
         }
     }
 

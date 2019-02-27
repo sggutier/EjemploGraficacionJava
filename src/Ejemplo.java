@@ -9,35 +9,23 @@
  * @author S-Nancy
  */
 import GeoBasica.*;
+import GeoFiguras.MultiDibujable;
 import Logo.Cubo;
 import Logo.Dino;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 public class Ejemplo {
 
     public static void main(String arg[]) throws InterruptedException {            
         VentanaCerrable ventana = new VentanaCerrable("2D");
-        Vector v = new Vector();
-//        Dibujable w = new CirculoGrafico(30, 30, 20, Color.red);
-//        v.addElement(w);
-//        v.addElement(new CuadradoGrafico(100, 100, 50, Color.green));
-//        v.add(new LineaGrafica(200, 2, 300, 200, Color.orange));
-//        Dibujable t = new TrianguloGrafico(33, 490 - 200, 163, 490 - 200, 3, 370 - 200, Color.cyan);
-//
-////        v.add(new GeoBasica.TrianguloGrafico(0, 0, 100, 0, 0, 300, Color.CYAN));
-//
-//        v.add(t);
-//
-//        PoligonoGrafico wo = (PoligonoGrafico) new RectanguloGrafico(3, 4, Color.pink).escalar(10,10).rotar(10).trasladar(70, 30);
-//        v.add(wo);
-//
-//
-//        v.add(new RectanguloGrafico(70, 70, Color.yellow).sizallar(-0.5, 0).trasladar(130, 0));
-//        v.add(new LogoSistemas().escalar(0.2, 0.2).trasladar(80, 80));
-        Dibujable d = new Dino().escalar(7, 7);
-        v.add(d.trasladar(-d.minX(), -d.minY()));
-//        v.add(new TextoGrafico("yoloswag",100,100,20));
+        ArrayList<Dibujable> v = new ArrayList<>();
+        MultiDibujable d = new Dino().escalar(7, 7);
+        d = d.trasladar(-d.minX(), -d.minY());
+        v.add(d);
+
+        System.out.println("v contiene: " + v.size());
 
         PanelDibujo mipanel = new PanelDibujo(v);
         ventana.add(mipanel);

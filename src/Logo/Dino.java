@@ -1,8 +1,13 @@
 package Logo;
 
+import GeoBasica.Dibujable;
 import GeoFiguras.MultiDibujable;
 
+import java.awt.*;
+import java.util.Collection;
+
 public class Dino extends MultiDibujable {
+
     public Dino() {
         this.add(new Lengua());
         this.add(new Dientes());

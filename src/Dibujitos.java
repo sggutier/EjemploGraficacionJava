@@ -7,6 +7,8 @@
 import GeoBasica.Dibujable;
 import GeoBasica.TextoGrafico;
 import GeoFiguras.*;
+import Logo.*;
+import com.sun.org.apache.xpath.internal.operations.Mult;
 
 import javax.swing.*;
 import java.awt.Color;
@@ -213,9 +215,12 @@ public class Dibujitos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSmileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSmileActionPerformed
-        contenido.add(new Smile());
+//        contenido.add(new Smile());
+        MultiDibujable d = new Dino().escalar(4, 4);
+        MultiDibujable x = d.trasladar(-d.minX(), -d.minY() + 200) ;
+        contenido.add(x);
+        x.pasos = true;
         paint(this.getGraphics());
-        
     }//GEN-LAST:event_btnSmileActionPerformed
 
     private void btnEstrellaActionPerformed(java.awt.event.ActionEvent evt) {                                        

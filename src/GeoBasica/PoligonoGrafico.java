@@ -5,10 +5,17 @@ import java.util.Collection;
 
 public class PoligonoGrafico extends Poligono implements Dibujable {
     private Color color;
+    public Paint pnt = null;
 
     public PoligonoGrafico(Punto[] puntos, Color color) {
         super(puntos);
         this.color = color;
+    }
+
+    public PoligonoGrafico(Punto[] puntos, Color color, Paint pnt) {
+        super(puntos);
+        this.color = color;
+        this.pnt = pnt;
     }
 
     public PoligonoGrafico(double[] xs, double[] ys, Color color) {
@@ -26,6 +33,12 @@ public class PoligonoGrafico extends Poligono implements Dibujable {
         this.color = color;
     }
 
+    public PoligonoGrafico(Collection<Punto> w, Color color, Paint pnt) {
+        super(w);
+        this.color = color;
+        this.pnt = pnt;
+    }
+
     public PoligonoGrafico(Color color) {
         this.color = color;
     }
@@ -38,31 +51,32 @@ public class PoligonoGrafico extends Poligono implements Dibujable {
             xs[i] = (int) Math.round(super.get(i).x);
             ys[i] = (int) Math.round(super.get(i).y);
         }
+        ((Graphics2D) dw).setPaint(pnt);
         Polygon pol = new Polygon(xs, ys, xs.length);
-//        dw.setColor(Color.BLACK);
-//        dw.drawPolygon(pol);
-        dw.setColor(color);
+        if(pnt == null)
+            dw.setColor(color);
         dw.fillPolygon(pol);
+        ((Graphics2D) dw).setPaint(null);
     }
 
     @Override
-    public Dibujable trasladar(double dx, double dy) {
-        return new PoligonoGrafico(super.trasladarP(dx, dy), color);
+    public PoligonoGrafico trasladar(double dx, double dy) {
+        return new PoligonoGrafico(super.trasladarP(dx, dy), color, pnt);
     }
 
     @Override
-    public Dibujable rotar(double deg) {
-        return new PoligonoGrafico(super.rotarP(deg), color);
+    public PoligonoGrafico rotar(double deg) {
+        return new PoligonoGrafico(super.rotarP(deg), color, pnt);
     }
 
     @Override
-    public Dibujable escalar(double fx, double fy) {
-        return new PoligonoGrafico(super.escalarP(fx, fy), color);
+    public PoligonoGrafico escalar(double fx, double fy) {
+        return new PoligonoGrafico(super.escalarP(fx, fy), color,pnt);
     }
 
     @Override
-    public Dibujable sizallar(double a, double b) {
-        return new PoligonoGrafico(super.sizallarP(a, b), color);
+    public PoligonoGrafico sizallar(double a, double b) {
+        return new PoligonoGrafico(super.sizallarP(a, b), color,pnt);
     }
 
     @Override

@@ -8,6 +8,8 @@ import java.awt.*;
 
 public class Cubo extends MultiDibujable {
     public Cubo() {
+        super.pasos = true;
+
         this.add(new PoligonoGrafico(new Punto[]{
                 new Punto(104.43866, 81.972144),
                 new Punto(98.398874, 88.34221),

@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class MultiDibujable extends ArrayList<Dibujable> implements Dibujable {
+    public boolean pasos = false;
+
     public MultiDibujable() {
         super();
     }
@@ -17,39 +19,51 @@ public class MultiDibujable extends ArrayList<Dibujable> implements Dibujable {
 
     @Override
     public void dibujar(Graphics dw) {
-        for(Dibujable d : this)
+        for(Dibujable d : this) {
+            if(pasos) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
             d.dibujar(dw);
+        }
     }
 
     @Override
-    public Dibujable trasladar(double dx, double dy) {
+    public MultiDibujable trasladar(double dx, double dy) {
         MultiDibujable ans = new MultiDibujable();
         for(Dibujable d : this)
             ans.add(d.trasladar(dx, dy));
+        ans.pasos = this.pasos;
         return ans;
     }
 
     @Override
-    public Dibujable rotar(double deg) {
+    public MultiDibujable rotar(double deg) {
         MultiDibujable ans = new MultiDibujable();
         for(Dibujable d : this)
             ans.add(d.rotar(deg));
+        ans.pasos = this.pasos;
         return ans;
     }
 
     @Override
-    public Dibujable escalar(double fx, double fy) {
+    public MultiDibujable escalar(double fx, double fy) {
         MultiDibujable ans = new MultiDibujable();
         for(Dibujable d : this)
             ans.add(d.escalar(fx, fy));
+        ans.pasos = this.pasos;
         return ans;
     }
 
     @Override
-    public Dibujable sizallar(double a, double b) {
+    public MultiDibujable sizallar(double a, double b) {
         MultiDibujable ans = new MultiDibujable();
         for(Dibujable d : this)
             ans.add(d.sizallar(a, b));
+        ans.pasos = this.pasos;
         return ans;
     }
 

@@ -8,6 +8,7 @@ import java.awt.*;
 
 public class Dientes extends MultiDibujable {
     public Dientes() {
+        super.pasos = true;
         this.add(new PoligonoGrafico(new Punto[]{
                 new Punto(88.332578, 69.687265),
                 new Punto(91.005273, 69.893792),
