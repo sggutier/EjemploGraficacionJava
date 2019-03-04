@@ -72,7 +72,8 @@ public class Cuerpo extends PoligonoGrafico {
                         new Punto(168.820704126, 88.3598349458),
                         new Punto(164.993515583, 88.4101126639),
                         new Punto(161.16628, 88.460391),
-                }, Color.decode("#009898"),
+                },
+                // Color.decode("#009898"),
 //                new GradientPaint(20, 0, Color.green, // Gradiente
 //                        0, 20, Color.decode("#009898"), true));
                 new Color(0, 152, 152, 100)); // Verde

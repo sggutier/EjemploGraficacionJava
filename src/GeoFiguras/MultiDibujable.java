@@ -95,7 +95,7 @@ public class MultiDibujable extends ArrayList<Dibujable> implements Dibujable {
     public double maxY() {
         double ans = -1e9;
         for(Dibujable d : this)
-            ans = Math.min(ans, d.maxY());
+            ans = Math.max(ans, d.maxY());
         return ans;
     }
 }

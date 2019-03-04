@@ -10,8 +10,8 @@
  */
 import GeoBasica.*;
 import GeoFiguras.MultiDibujable;
-import Logo.Cubo;
-import Logo.Dino;
+import Mascota.Cubo;
+import Mascota.Dino;
 
 import java.util.ArrayList;
 import java.util.Vector;

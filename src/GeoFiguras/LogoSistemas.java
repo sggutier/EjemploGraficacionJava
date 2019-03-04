@@ -51,5 +51,7 @@ public class LogoSistemas extends MultiDibujable {
                 new Punto(a2, y5),
                 new Punto(q, y2),
         },Color.decode("#00356c")));
+        
+        
     }
 }

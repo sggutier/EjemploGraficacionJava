@@ -6,7 +6,7 @@ import GeoBasica.Punto;
 import java.awt.*;
 
 public class Estrella extends PoligonoGrafico {
-    public Estrella(int outr, int inr, int lads, Color c) {
+    public Estrella(int outr, int inr, int lads, Paint c) {
         super(c);
         double deg = 360.0 / lads;
         Punto a = new Punto(0, -outr);
